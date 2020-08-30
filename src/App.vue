@@ -24,9 +24,6 @@
                   <router-link to="/exchange">
                     <MenuItem name="nav-exchange">{{$t("header.exchange")}}</MenuItem>
                   </router-link>
-                  <router-link to="/announcement/0">
-                    <MenuItem name="nav-service">{{$t("header.service")}}</MenuItem>
-                  </router-link>
                 </Submenu>
               </Menu>
             </div>
