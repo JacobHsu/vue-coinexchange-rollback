@@ -171,10 +171,10 @@ export default [
         path: '/chat',
         component: resolve=>(require(["../pages/otc/Chat"],resolve))
     },
-    {
-        path: '/identbusiness',
-        component: resolve=>(require(["../pages/uc/IdentBusiness"],resolve))
-    },
+    // {
+    //     path: '/identbusiness',
+    //     component: resolve=>(require(["../pages/uc/IdentBusiness"],resolve))
+    // },
     // {
     //     path: '/newhelp',
     //     component: newhelp,
