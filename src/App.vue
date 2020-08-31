@@ -43,21 +43,6 @@
                   </Submenu>
               </Menu>
             </div>
-            <div class="rightwrapper">
-              <poptip placement="bottom" width="120" class="appdownload" trigger="hover">
-                <a href="javascript:;" style="font-size:14px;">{{$t("header.appdownlaod")}}
-                  <Icon type="md-arrow-dropdown" size="18" />
-                </a>
-                <div class="api" slot="content">
-                  <div class="ios">
-                    <img src="../src/assets/images/appdownload.png" alt="">
-                    <div class="tips">
-                      <span>{{$t("header.scandownload")}}</span>
-                    </div>
-                  </div>
-                </div>
-              </poptip>
-            </div>
             <div class="rr login-container">
               <!-- 判断是否登录 -->
               <!-- 登录 -->
