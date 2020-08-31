@@ -22,8 +22,8 @@
       <div class="center">
         <div class="symbol">
           <div class="item" @click="currentCoinFavorChange">
-            <Icon v-if="currentCoinIsFavor" type="ios-star" color="#f0a70a" size="24" />
-            <Icon v-else type="ios-star-outline" color="#f0a70a" size="24" />
+            <!-- <Icon v-if="currentCoinIsFavor" type="ios-star" color="#f0a70a" size="24" />
+            <Icon v-else type="ios-star-outline" color="#f0a70a" size="24" /> -->
           </div>
           <div class="item" style="margin-left: -40px;">
               <span class="coin">{{currentCoin.coin}}
@@ -633,7 +633,7 @@ export default {
             title: this.$t("exchange.coin"),
             key: "coin",
             sortable: false,
-            width: 120,
+            width: 110,
             className: "coin-menu-symbol",
             render: (h, params) => {
               if(params.row.coin == "BZB"){
