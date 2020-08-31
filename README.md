@@ -1,7 +1,8 @@
 # vue-coinexchange-rollback
 
 [CoinExchange](https://gitee.com/cexchange/CoinExchange) Web_Front
-http://118.25.133.182/
+http://118.25.133.182/  
+[huobi](https://www.huobi.com/zh-cn/exchange/)
 
 ## charting_library
 

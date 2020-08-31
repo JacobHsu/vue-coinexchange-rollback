@@ -59,7 +59,6 @@
             <span class="num ">{{currentCoin.volume}} {{currentCoin.coin}}</span>
           </div>
           <div class="item">
-            <!-- <img src="../../assets/images/exchange/light-switch.png" alt=""> -->
           </div>
         </div>
         <div class="imgtable">
@@ -78,25 +77,6 @@
           <img v-if="lang == 'English' && publishType=='FENTAN'" src="../../assets/images/lightning-bg-en.png"></img>
           <img v-if="lang == '简体中文' && publishType=='QIANGGOU'" src="../../assets/images/lightning-bg2.png"></img>
           <img v-if="lang == 'English' && publishType=='QIANGGOU'" src="../../assets/images/lightning-bg2-en.png"></img>
-          <div class="l-content">
-            <BZCountDown style="width:100%;margin-top:5px;"
-                    :countDownBgColor.sync="countDownBgColor"
-                    :publishState.sync="publishState"
-                    :publishType="publishType"
-                    :currentTime="currentTime"
-                    :startTime="startTime"
-                    :clearTime="clearTime"
-                    :endTime="endTime"
-                    :showPublishMask="showPublishMask"
-                    :hidePublishMask="hidePublishMask"
-                    :hideCountDown="hideCountDown">
-            </BZCountDown>
-            <p class="l-info">
-              <span class="l-txt">{{$t("exchange.publishamount")}}：</span><span class="l-count">{{publishAmount | toFixedPublishAmount}} </span><span class="l-unit">{{currentCoin.coin}}</span> &nbsp;&nbsp;&nbsp;&nbsp;
-              <span class="l-txt">{{$t("exchange.publishprice")}}：</span><span class="l-price">{{publishPrice | toFixedPublishPrice}} </span><span class="l-unit">{{currentCoin.base}}</span>
-            </p>
-            <p class="l-detail"><router-link target="_blank" to="/announcement/118930">{{$t("exchange.publishdetail")}}</router-link></p>
-          </div>
         </div>
         <div class="handlers">
           <span @click="changePlate('all')" class="handler handler-all" :class="{active:selectedPlate=='all'}"></span>
@@ -117,19 +97,6 @@
 
       </div>
     </div>
-    <div class="order" >
-      <div class="order-handler">
-        <span @click="changeOrder('current')" :class="{active:selectedOrder==='current'}">{{$t('exchange.curdelegation')}}</span>
-        <span @click="changeOrder('history')" :class="{active:selectedOrder==='history'}">{{$t('exchange.hisdelegation')}}</span>
-        <router-link v-show="selectedOrder==='current'" class="linkmore" to="/uc/entrust/current">{{$t("common.more")}}</router-link>
-        <router-link v-show="selectedOrder==='history'" class="linkmore" to="/uc/entrust/history">{{$t("common.more")}}</router-link>
-      </div>
-      <div class="table">
-        <Table height="240" v-if="selectedOrder==='current'" :columns="currentOrder.columns" :data="currentOrder.rows" :no-data-text="$t('common.nodata')"></Table>
-        <Table height="240" v-else :columns="historyOrder.columns" :no-data-text="$t('common.nodata')" :data="historyOrder.rows"></Table>
-      </div>
-    </div>
-
   </div>
 </template>
 <style scoped lang="scss">
@@ -513,10 +480,10 @@ var SockJS = require("sockjs-client");
 var moment = require("moment");
 import DepthGraph from "@components/exchange/DepthGraph.vue";
 import $ from "@js/jquery.min.js";
-import BZCountDown from "@components/exchange/BZCountDown.vue";
+
 
 export default {
-  components: { expandRow, DepthGraph, BZCountDown},
+  components: { expandRow, DepthGraph},
   data() {
     let self = this;
     return {
