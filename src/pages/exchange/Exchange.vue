@@ -473,7 +473,7 @@ $night-color: #fff;
 }
 </style>
 <script>
-import expandRow from "@components/exchange/expand.vue";
+
 import Datafeeds from "@js/charting_library/datafeed/bitrade.js";
 var Stomp = require("stompjs");
 var SockJS = require("sockjs-client");
@@ -483,7 +483,7 @@ import $ from "@js/jquery.min.js";
 
 
 export default {
-  components: { expandRow, DepthGraph},
+  components: { DepthGraph},
   data() {
     let self = this;
     return {
@@ -948,117 +948,6 @@ export default {
         bidRows: []
       },
       currentOrder: {
-        columns: [
-          {
-            type: "index",
-            width: 40,
-            height:40,
-            render: (h, params) => {
-              return h(expandRow, {
-                props: {
-                  skin: params.row.skin,
-                  rows: params.row.detail
-                }
-              });
-            }
-          },
-          {
-            title: self.$t("exchange.time"),
-            key: "time",
-            render: (h, params) => {
-              return h("span", {}, this.dateFormat(params.row.time));
-            }
-          },
-          {
-            title: self.$t("exchange.symbol"),
-            key: "symbol"
-          },
-          {
-            title: self.$t("exchange.type"),
-            render(h, params) {
-              return h(
-                "span",
-                params.row.type === "LIMIT_PRICE" ? "限价" : "市价"
-              );
-            }
-          },
-          {
-            title: self.$t("exchange.direction"),
-            key: "direction",
-            render: (h, params) => {
-              const row = params.row;
-              const className = row.direction.toLowerCase();
-              return h(
-                "span",
-                {
-                  attrs: {
-                    class: className
-                  }
-                },
-                row.direction == "BUY"
-                  ? self.$t("exchange.buyin")
-                  : self.$t("exchange.sellout")
-              );
-            }
-          },
-          {
-            title: self.$t("exchange.price"),
-            key: "price",
-            render(h, params) {
-              return h("span", self.toFloor(params.row.price));
-            }
-          },
-          {
-            title: self.$t("exchange.num"),
-            key: "amount",
-            render(h, params) {
-              return h("span", self.toFloor(params.row.amount));
-            }
-          },
-          {
-            title: self.$t("exchange.traded"),
-            key: "tradedAmount",
-            render(h, params) {
-              return h("span", self.toFloor(params.row.tradedAmount));
-            }
-          },
-          {
-            title: self.$t("exchange.dealamount"),
-            key: "turnover",
-            render(h, params) {
-              return h("span", self.toFloor(params.row.turnover));
-            }
-          },
-          {
-            title: self.$t("exchange.action"),
-            key: "operate",
-            width: 110,
-            render: (h, params) => {
-              return h(
-                "Button",
-                {
-                  props: {
-                    size: "small"
-                  },
-                  style: {
-                    border: "1px solid #f0ac19",
-                    color: "#f1ac19",
-                    "line-height": "1.2",
-                    "border-radius": "10px"
-                  },
-                  on: {
-                    click: () => {
-                      // console.log("======开始撤单")
-                      this.cancel(params.index);
-                    }
-                  }
-                },
-                self.$t("exchange.undo")
-              );
-            }
-          }
-        ],
-        rows: []
       },
       historyOrder: {
         pageSize: 10,
