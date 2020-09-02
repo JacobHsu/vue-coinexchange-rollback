@@ -29,13 +29,13 @@
               <span class="coin">{{currentCoin.coin}}
                 <small>/{{currentCoin.base}}</small>
               </span>
-            <Poptip trigger="hover" :title="coinInfo.name" content="content"  placement="bottom-start" word-wrap width="300">
+            <!-- <Poptip trigger="hover" :title="coinInfo.name" content="content"  placement="bottom-start" word-wrap width="300">
               <Icon type="md-information-circle" style="color:#546886;margin-left:5px;"/>
               <div class="api" slot="content">
                   <div class="coin-info">{{coinInfo.information}}</div>
                   <p style="text-align:right;margin-top: -10px;"><a :href="coinInfo.infolink" target="_blank">{{$t("exchange.moredetail")}}</a></p>
               </div>
-            </Poptip>
+            </Poptip> -->
           </div>
           <div class="item">
             <span class="text">{{$t('service.NewPrice')}}</span>
