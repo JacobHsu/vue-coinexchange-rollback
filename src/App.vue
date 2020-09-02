@@ -18,9 +18,9 @@
             <div class="header_nav">
               <Menu :active-name="activeNav" width="auto" :open-names="['1']">
                 <Submenu name="1">
-                  <router-link to="/">
+                  <!-- <router-link to="/">
                     <MenuItem name="nav-index">{{$t("header.index")}}</MenuItem>
-                  </router-link>
+                  </router-link> -->
                   <router-link to="/exchange">
                     <MenuItem name="nav-exchange">{{$t("header.exchange")}}</MenuItem>
                   </router-link>
@@ -30,7 +30,7 @@
             <div class="header_nav_mobile_triggle" @click="toggleMemu()">
               <Icon type="md-menu" style="font-size: 26px;color:#cccccc;"/>
             </div>
-            <div class="header_nav" style="float:right;margin-left: 10px;">
+            <!-- <div class="header_nav" style="float:right;margin-left: 10px;">
               <Menu mode="horizontal" width="auto" @on-select="changelanguage" style="height: 50px;line-height:50px;">
                   <Submenu name="lang">
                       <template slot="title" class="lang-title">
@@ -42,7 +42,7 @@
                       <MenuItem name="en" class="lang-item"><img src="./assets/images/lang-en.png"></img>ENGLISH</MenuItem>
                   </Submenu>
               </Menu>
-            </div>
+            </div> -->
             <div class="rr login-container">
               <!-- 判断是否登录 -->
               <!-- 登录 -->
@@ -81,7 +81,7 @@
                 </Dropdown>
               </div>
               <!-- 未登录 -->
-              <div class="login_register" v-else>
+              <!-- <div class="login_register" v-else>
                 <Menu active-name11="1-1" width="auto" :open-names="['2']">
                   <Submenu name="2" id="login_register_theme">
                     <router-link to="/login" id="login">
@@ -92,7 +92,7 @@
                     </router-link>
                   </Submenu>
                 </Menu>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -156,11 +156,10 @@
             </router-link>
         </Menu>
     </Drawer>
-    <div class="footer">
+    <!-- <div class="footer">
       <div class="footer_content">
         <div class="footer_left">
           <img  src="./assets/images/logo-bottom.png" style="margin:0" ></img>
-          <!-- <h3>Caymanex.Pro</h3> -->
           <p style="letter-spacing:2px;">{{$t("footer.gsmc")}}</p>
           <p>Copyright © 2019 - Bizzan.com All rights reserved.&nbsp;&nbsp;</p>
           <div class="social-list">
@@ -333,7 +332,7 @@
           </ul>
         </div>
       </div>
-    </div>
+    </div> -->
     <template>
       <BackTop :bottom="50"></BackTop>
     </template>
