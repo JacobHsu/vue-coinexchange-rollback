@@ -1674,7 +1674,8 @@ export default {
         });
     },
     getSymbol() {
-      this.$http.post(this.host + this.api.market.thumb, {}).then(response => {
+      //  this.$http.post(this.host + this.api.market.thumb, {}).then(response => {
+      this.$http.post(this.middleware + this.api.market.thumb, {}).then(response => {
         var resp = response.body;
         //先清空已有数据
         for (var i = 0; i < resp.length; i++) {
